@@ -1,9 +1,9 @@
-#include <stddef.h>
+#include <libft.h>
 
 void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	i;
-	char	*str;
+	unsigned char	*str;
 
 	i = 0;
 	str = s;
@@ -14,7 +14,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-
+/*
 #include <stdio.h>
 int main()
 {
@@ -23,3 +23,4 @@ int main()
 	printf("%s\n",src);
 	return (0);
 }
+*/
