@@ -1,40 +1,35 @@
 #include <stddef.h>
 #include <string.h>
 
-size_t	ft_strlcat(char *dst, char const *src, size_t dsize)
+size_t	ft_strlcat(char *dest, char const *src, size_t dsize)
 {
+	size_t	srclen;
+	size_t	destlen;
 	size_t	i;
-	size_t	j;
-	size_t	k;
 
-	if (!src)
-		src = "";
-	if (!dst)
-		return (0);
-	k = ft_strlen (src);
 	i = 0;
-	while (dst[i] && i <= dsize)
-		i++;
-	if (i >= dsize)
-		return (dsize + k);
-	j = 0;
-	while (src[j] && (i + j) < dsize - 1)
+	srclen = ft_strlen(src);
+	destlen = ft_strlen(dest);
+	if (dsize <= destlen)
+		return (dsize + srclen);
+	while (src[i] && destlen + i < dsize - 1)
 	{
-		dst[i + j] = src[j];
-		j++;
+		dest[destlen + i] = src[i];
+		i++;
 	}
-	dst[i + j] = '\0';
-	return (i + k);
+	dest[destlen + i] = '\0';
+	return (destlen + srclen);
 }
 
-#include <stdio.h>
-int main() {
+// #include <stdio.h>
+// int main() {
 
-char dest[] ="je m'appel ";
-char const str[] = "";
+// char dest[] ="je m'appel ";
+// char const str[] = "Ferdaous El Idrissi.";
 
-    printf("%zu\n",ft_strlcat(dest,str, 0));
+//     printf("%zu\n",ft_strlcat(dest,str, 15));
+// 	printf("%s\n",dest);
+// 	printf("%ld\n",strlen(dest));
 
-  return 0;
-}
-
+//   return 0;
+// }

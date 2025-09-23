@@ -11,7 +11,6 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 		return (NULL);
 	s = (const unsigned char *)s2;
 	d = (unsigned char *)s1;
-
 	if (d < s)
 	{
 		while (i < n)
@@ -30,11 +29,11 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 	}
 	return (d);
 }
-#include <stdio.h>
-int main()
-{
-	char dest[20];
-	ft_memmove(dest,"ferdaous",3);
-	printf("%s\n",dest);
-	return (0);
-}
+// #include <stdio.h>
+// int main()
+// {
+// 	char dest[20];
+// 	ft_memmove(dest,"ferdaous",3);
+// 	printf("%s\n",dest);
+// 	return (0);
+// }
