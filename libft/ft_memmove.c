@@ -1,36 +1,40 @@
-#include <libft.h>
-// #include <stddef.h>
+// #include <libft.h>
+#include <stddef.h>
 
 void	*ft_memmove(void *s1, const void *s2, size_t n)
 {
 	const unsigned char	*s;
 	unsigned char		*d;
+	size_t				i;
 
 	if (!s1 || !s2)
 		return (NULL);
-	d = (unsigned char *)s1;
 	s = (const unsigned char *)s2;
-	if (s < d && d < s + n)
+	d = (unsigned char *)s1;
+
+	if (d < s)
 	{
-		while (n--)
+		while (i < n)
 		{
-			d[n] = s[n];
+			d[i] = s[i];
+			i++;
 		}
 	}
 	else
 	{
-		while (n--)
+		while (n > 0)
 		{
-			*d++ = *s++;
+			d[n - 1] = s[n - 1];
+			n--;
 		}
 	}
-	return (s1);
+	return (d);
 }
-// #include <stdio.h>
-// int main()
-// {
-// 	char dest[20];
-// 	ft_memmove(dest,"ferdaous",3);
-// 	printf("%s\n",dest);
-// 	return (0);
-// }
+#include <stdio.h>
+int main()
+{
+	char dest[20];
+	ft_memmove(dest,"ferdaous",3);
+	printf("%s\n",dest);
+	return (0);
+}
