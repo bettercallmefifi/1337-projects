@@ -22,14 +22,12 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 	}
 	else
 	{
-		while (n > 0)
-		{
-			d[n - 1] = s[n - 1];
-			n--;
-		}
+		while (n--)
+			d[n] = s[n];
 	}
 	return (s1);
 }
+
 // #include <stdio.h>
 // int main()
 // {
