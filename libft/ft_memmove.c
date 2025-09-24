@@ -1,5 +1,5 @@
-// #include <libft.h>
-#include <stddef.h>
+#include <libft.h>
+//#include <stddef.h>
 
 void	*ft_memmove(void *s1, const void *s2, size_t n)
 {
@@ -11,6 +11,7 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 		return (NULL);
 	s = (const unsigned char *)s2;
 	d = (unsigned char *)s1;
+	i = 0;
 	if (d < s)
 	{
 		while (i < n)
@@ -27,7 +28,7 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 			n--;
 		}
 	}
-	return (d);
+	return (s1);
 }
 // #include <stdio.h>
 // int main()
