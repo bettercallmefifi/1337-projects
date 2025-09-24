@@ -6,19 +6,21 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
 	char	h;
+	char	*str;
 
+	str = (char *)s;
 	i = 0;
 	if (!s)
 		return (NULL);
 	if (!c)
-		return ((char *)(s + ft_strlen(s)));
+		return ((char *)(str + ft_strlen(str)));
 	h = (char)c;
-	while (s[i])
+	while (str[i])
 		i++;
 	while (i >= 0)
 	{
-		if (s[i] == h)
-			return ((char *)(s + i));
+		if (str[i] == h)
+			return (&str[i]);
 		i--;
 	}
 	return (NULL);
